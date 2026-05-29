@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { BackgroundGlow } from "@/components/ui/BackgroundGlow";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://adityaputraafendi.com"),
@@ -48,7 +49,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>{children}</body>
+      <body className="relative overflow-x-hidden">
+        <BackgroundGlow />
+        {children}
+      </body>
     </html>
   );
 }

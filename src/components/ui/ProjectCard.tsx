@@ -10,7 +10,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article
       className={cn(
-        "group col-span-12 overflow-hidden border border-[var(--line)] bg-[var(--paper)]",
+        "group col-span-12 overflow-hidden liquid-glass-card",
         project.span
       )}
     >
@@ -37,7 +37,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         )}
       </div>
 
-      <div className="flex min-h-[320px] flex-col gap-4 border-t border-[var(--line)] p-5 md:p-6">
+      <div className="flex min-h-[320px] flex-col gap-4 border-t border-[var(--line)]/15 p-5 md:p-6">
         <div className="flex items-center justify-between font-mono-ibm text-[11px] uppercase tracking-[0.22em] text-[var(--ink-2)]">
           <span>
             [ {project.index} ] {project.tag}
@@ -45,7 +45,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <span>{project.year}</span>
         </div>
 
-        <h3 className="font-display text-3xl font-black uppercase leading-none tracking-tighter md:text-4xl">
+        <h3 className="font-display text-3xl font-black uppercase leading-none tracking-tighter md:text-4xl text-[var(--ink)]">
           {project.title}
         </h3>
 
@@ -57,7 +57,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.stack.map((item) => (
             <span
               key={item}
-              className="border border-[var(--line)] px-2 py-1 font-mono-ibm text-[10px] uppercase tracking-[0.18em]"
+              className="border border-[var(--line)]/30 px-2 py-1 font-mono-ibm text-[10px] uppercase tracking-[0.18em] text-[var(--ink-2)]"
             >
               {item}
             </span>

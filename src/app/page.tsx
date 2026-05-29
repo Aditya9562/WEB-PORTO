@@ -12,7 +12,7 @@ import { Skills } from "@/components/sections/Skills";
 
 export default function Home() {
   return (
-    <div className="grain min-h-screen bg-[var(--bg)] text-[var(--ink)]">
+    <div className="grain min-h-screen bg-transparent text-[var(--ink)]">
       <Navbar />
       <main>
         <Hero />

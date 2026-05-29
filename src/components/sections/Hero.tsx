@@ -24,12 +24,18 @@ const word: Variants = {
 };
 
 export function Hero() {
+  // Format current month & year dynamically (e.g., "May 2026")
+  const currentMonthYear = new Date().toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric"
+  });
+
   return (
     <section
       id="top"
       className="relative mx-auto flex min-h-[100svh] max-w-[90rem] flex-col justify-between overflow-hidden px-6 pb-16 pt-32 md:px-12"
     >
-      <div className="grid grid-cols-12 gap-6 font-mono-ibm text-[11px] uppercase tracking-[0.22em] text-[var(--ink-2)]">
+      <div className="grid grid-cols-12 gap-6 font-mono-ibm text-[11px] uppercase tracking-[0.22em] text-[var(--ink-2)] z-10">
         <div className="col-span-6 md:col-span-3">
           <div className="mb-1 text-[var(--ink)]">[ 01 ] Location</div>
           {profile.location}
@@ -43,8 +49,8 @@ export function Hero() {
           {profile.discipline}
         </div>
         <div className="hidden md:col-span-3 md:block">
-          <div className="mb-1 text-[var(--ink)]">[ 04 ] Index</div>
-          APA / 2026
+          <div className="mb-1 text-[var(--ink)]">[ 04 ] Last Updated</div>
+          {currentMonthYear}
         </div>
       </div>
 
@@ -52,11 +58,11 @@ export function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="mt-12 font-display text-[17vw] font-black uppercase leading-[0.85] tracking-tighter md:mt-0 md:text-[12.8vw]"
+        className="mt-12 font-display text-[17vw] font-black uppercase leading-[0.85] tracking-tighter md:mt-0 md:text-[12.8vw] z-10"
       >
         <span className="block overflow-hidden">
-          <motion.span className="block" variants={word}>
-            Aditya
+          <motion.span className="block cursor-default" variants={word}>
+            Ad<span className="hover:text-[var(--accent)] transition-colors duration-300">it</span>ya
           </motion.span>
         </span>
         <span className="block overflow-hidden">
@@ -71,9 +77,18 @@ export function Hero() {
         </span>
       </motion.h1>
 
-      <div className="mt-16 grid grid-cols-12 items-end gap-6">
-        <div className="col-span-12 font-mono-ibm text-sm leading-relaxed text-[var(--ink-2)] md:col-span-5 md:text-base">
-          <span className="text-[var(--ink)]">{profile.tagline}</span> - {profile.intro}
+      <div className="mt-16 grid grid-cols-12 items-end gap-6 z-10">
+        <div className="col-span-12 font-mono-ibm text-sm leading-relaxed text-[var(--ink-2)] md:col-span-7 md:text-base">
+          <div>
+            <div className="mb-3">
+              <span className="tagline-glow font-bold text-[var(--ink)] cursor-default">
+                {profile.tagline}
+              </span>
+            </div>
+            <p className="text-sm text-[var(--ink-2)] leading-relaxed">
+              {profile.intro}
+            </p>
+          </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="#contact">Contact Me</Button>
             <Button href="#work" variant="outline">
@@ -82,7 +97,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hidden md:col-span-3 md:block" />
+        <div className="hidden md:col-span-1 md:block" />
 
         <div className="col-span-12 md:col-span-4">
           <a
