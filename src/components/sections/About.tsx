@@ -61,7 +61,7 @@ export function About() {
         <div className="col-span-12 md:col-span-5">
           <div className="group relative aspect-[4/5] w-full overflow-hidden border border-[var(--line)] bg-[var(--paper)]">
             <Image
-              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=85"
+              src="/assets/projects/pas foto.png"
               alt="Collaborative project planning session"
               fill
               sizes="(min-width: 768px) 42vw, 100vw"

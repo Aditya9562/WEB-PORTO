@@ -90,10 +90,10 @@ export const profile = {
     "My current professional direction sits at the intersection of project management, system analysis, and technology operations. I am disciplined, adaptive, and continuously learning in areas related to business process improvement, AI/ML, and scalable digital systems."
   ],
   facts: [
-    ["Team Capstone Award", "2nd Best"],
+    ["Team Capstone Award", "Top 3"],
     ["Projects Handled", "15+"],
     ["Professional Certified", "30+"],
-    ["Student Activity Unit", "Top 5 Led"]
+    ["Student Activity Unit", "Achieved Top 5"]
   ]
 };
 
@@ -105,7 +105,7 @@ export const socials: SocialLink[] = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/adityaputraafendi/",
     icon: Linkedin
   },
   {
@@ -175,7 +175,7 @@ export const skills: SkillGroup[] = [
     title: "Project, Product & Business",
     icon: Server,
     items: [
-      { name: "Project Management", details: "" },
+      { name: "Project Management", details: "UTC 2k25" },
       { name: "Agile Methodology", details: "" },
       { name: "Action Planning", details: "" },
       { name: "Product Development", details: "" },
@@ -327,7 +327,7 @@ export const projects: Project[] = [
     year: "2024",
     description:
       "Personnel data management and status tracking web application built during NTMC Korlantas POLRI internship. Led design and system architecture with focus on scalable records, automated notifications, and HR usability.",
-    image: "/assets/projects/work-doc-image-2.png",
+    image: "/assets/projects/work-doc-image-1.png",
     stack: ["System Design", "Web App", "HRIS", "Data Management"],
     span: "md:col-span-6"
   },
@@ -338,17 +338,17 @@ export const projects: Project[] = [
     year: "2025",
     description:
       "Mobile-based platform concept from Bangkit Academy that connects users with verified home service professionals for easy, reliable home repair booking.",
-    image: "/assets/projects/work-doc-image-4.png",
+    image: "/assets/projects/work-doc-image-3.jpeg",
     stack: ["Machine Learning", "Mobile Product", "UX Flow", "Team Delivery"],
     span: "md:col-span-6"
   },
   {
     index: "03",
     title: "UTC2K25 Project Owner",
-    tag: "Event Branding",
+    tag: "Project Management",
     year: "2025",
     description:
-      "Owned event branding for a first-ever national taekwondo championship, driving 457,700+ impressions and 6,800+ organic Instagram interactions in one month.",
+      "Owned project for a first-ever national taekwondo championship in Diponegoro University with over 1400+ Partisipants and 6000+ visitors, and also driving 457,700+ impressions and 6,800+ organic Instagram interactions in one month.",
     image: "/assets/projects/work-doc-image-7.jpeg",
     stack: ["Project Management", "Campaign Strategy", "Stakeholder Management", "Analytics"],
     span: "md:col-span-6"
@@ -356,10 +356,10 @@ export const projects: Project[] = [
   {
     index: "04",
     title: "Leadership Training 2024",
-    tag: "Program Delivery",
+    tag: "Learning and Development",
     year: "2024",
     description:
-      "Planned, coordinated, executed, and evaluated a leadership development program with 100% completion of planned activities and aligned qualitative outcomes.",
+      "Led the Planning, coordination, execution, and evaluation of leadership development program with 100% completion of planned activities and aligned qualitative outcomes.",
     image: "/assets/projects/leadership-training.mp4",
     mediaType: "video",
     stack: ["Program Management", "Committee Coordination", "Evaluation", "People Development"],

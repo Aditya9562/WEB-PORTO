@@ -1,7 +1,5 @@
 import { profile, socials } from "@/data/profile";
 
-const index = ["01 - About", "02 - Work", "03 - Skills", "04 - Experience", "05 - Contact"];
-
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -18,11 +16,9 @@ export function Footer() {
         </div>
 
         <div className="col-span-6 md:col-span-3">
-          <div className="mb-2 text-[var(--bg)]/60">Index</div>
+          <div className="mb-2 text-[var(--bg)]/60"> </div>
           <ul className="space-y-1 normal-case tracking-normal">
-            {index.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+
           </ul>
         </div>
 
