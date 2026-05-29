@@ -344,7 +344,7 @@ export const projects: Project[] = [
   },
   {
     index: "03",
-    title: "UTC2K25 Digital Campaign",
+    title: "UTC2K25 Project Owner",
     tag: "Event Branding",
     year: "2025",
     description:
