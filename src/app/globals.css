@@ -1,0 +1,206 @@
+@import url("https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap");
+@import "tailwindcss";
+
+:root {
+  --bg: #f2f1ed;
+  --ink: #0a0a0a;
+  --ink-2: #5f5d59;
+  --muted: #d9d6ce;
+  --paper: #ffffff;
+  --accent: #f03a17;
+  --line: #0a0a0a;
+}
+
+.dark {
+  --bg: #090909;
+  --ink: #f2f1ed;
+  --ink-2: #a8a39b;
+  --muted: #1d1d1d;
+  --paper: #111111;
+  --accent: #ff5636;
+  --line: #f2f1ed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+::selection {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-display {
+  font-family: "Cabinet Grotesk", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.font-mono-ibm {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.grain::before {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  content: "";
+  opacity: 0.055;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+.dark .grain::before {
+  opacity: 0.08;
+  mix-blend-mode: screen;
+}
+
+.stroke-text {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--ink);
+}
+
+.linky {
+  position: relative;
+  display: inline-block;
+}
+
+.linky::after {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  content: "";
+  background: currentColor;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.35s ease;
+}
+
+.linky:hover::after {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.img-hover {
+  filter: grayscale(100%) contrast(108%);
+  transition:
+    filter 0.5s ease,
+    transform 0.6s ease;
+}
+
+.group:hover .img-hover {
+  filter: grayscale(0) contrast(100%);
+  transform: scale(1.025);
+}
+
+.skill-card {
+  transition:
+    transform 0.35s ease,
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  background: var(--paper);
+  box-shadow: 0 22px 60px rgb(240 58 23 / 0.14);
+}
+
+.skill-card:hover .skill-chip {
+  border-color: color-mix(in srgb, var(--accent) 70%, var(--line));
+  color: var(--accent);
+}
+
+.skill-chip {
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.skill-chip:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff !important;
+}
+
+.input-bare {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  color: var(--ink);
+  padding: 14px 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 15px;
+  transition: border-color 0.25s ease;
+}
+
+.input-bare:focus {
+  border-bottom-color: var(--accent);
+}
+
+.input-bare::placeholder {
+  color: var(--ink-2);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1.05s steps(1) infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 36s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
